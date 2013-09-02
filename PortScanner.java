@@ -1,4 +1,3 @@
-
 package port.scanner;
 
 import java.awt.Font;
@@ -38,7 +37,7 @@ public class PortScanner extends JFrame implements FocusListener,ActionListener,
         
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setDefaultLookAndFeelDecorated(true);
-        l1=new JLabel("Port Scanner by DevilGarg ", SwingConstants.CENTER);
+        l1=new JLabel("Port Scanner by OFS ", SwingConstants.CENTER);
         l1.setFont(new Font("Serif", Font.BOLD, 20));
         l1.setBounds(150,25,300,25);
         add(l1);
