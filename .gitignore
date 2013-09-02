@@ -3,6 +3,7 @@
 #################
 .idea/
 Android/.idea/
+Android/.gradle/
 Android/PortScanner/.idea/
 Android/PortScanner/out/
 Android/PortScanner/gen/
