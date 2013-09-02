@@ -14,6 +14,11 @@ import javax.swing.*;
 public class PortScanner extends JFrame implements FocusListener,
 		ActionListener, Runnable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -2053356359285624030L;
+
 	Thread t = new Thread(this);
 	private JButton btnStart, btnStop, btnPause, btnResume;
 	private JTextField entrIP, entrPort, entrEndPort;
@@ -147,24 +152,26 @@ public class PortScanner extends JFrame implements FocusListener,
 
 	@Override
 	public void run() {
-                //Set connection timeout here in milliseconds
-                int timeout=1000; 
+		// Set connection timeout here in milliseconds
+		int timeout = 1000;
+		showResult.append("Results for: "
+				+ rslt.toString().replaceFirst("/", "") + "\n\n");
 		while (strtPort <= endPort) {
 
 			try {
-                            s1=new Socket();
-                            SocketAddress sockaddr=new InetSocketAddress(rslt,strtPort);
-                            s1.connect(sockaddr,timeout);
-			    showResult.append(strtPort +" is open at" +rslt + "\n");
-			    s1.close();
+				s1 = new Socket();
+				SocketAddress sockaddr = new InetSocketAddress(rslt, strtPort);
+				s1.connect(sockaddr, timeout);
+				showResult.append("[+] OPEN : " + strtPort + "\n");
+				s1.close();
 			} catch (IOException ex) {
-                            showResult.append(strtPort +" is closed at" +rslt + "\n");
+				showResult.append("[-] CLOSED : " + strtPort + "\n");
 			}
 
 			strtPort++;
 		}
 
-		showResult.append("Scan has been Completed");
+		showResult.append("\n\n[!] Scan has been Completed");
 	}
 
 }
