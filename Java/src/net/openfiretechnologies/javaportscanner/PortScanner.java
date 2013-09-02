@@ -7,7 +7,6 @@ import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.io.IOException;
 import java.net.*;
-import java.nio.channels.SocketChannel;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -148,21 +147,18 @@ public class PortScanner extends JFrame implements FocusListener,
 
 	@Override
 	public void run() {
-
+                //Set connection timeout here in milliseconds
+                int timeout=1000; 
 		while (strtPort <= endPort) {
 
 			try {
-
-				s1 = new Socket(rslt, strtPort);
-				SocketChannel channel = SocketChannel.open(s1
-						.getRemoteSocketAddress());
-				if (channel.isConnected())
-					showResult.append(rslt + " is listening at port "
-							+ strtPort + "\n");
-				s1.close();
+                            s1=new Socket();
+                            SocketAddress sockaddr=new InetSocketAddress(rslt,strtPort);
+                            s1.connect(sockaddr,timeout);
+			    showResult.append(strtPort +" is open at" +rslt + "\n");
+			    s1.close();
 			} catch (IOException ex) {
-				showResult.append(rslt + " is not listening at port "
-						+ strtPort + "\n");
+                            showResult.append(strtPort +" is closed at" +rslt + "\n");
 			}
 
 			strtPort++;
