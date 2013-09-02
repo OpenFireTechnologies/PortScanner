@@ -85,7 +85,6 @@ public class PortScanner extends JFrame implements FocusListener,
 
 	public static void main(String[] args) {
 		new PortScanner();
-
 	}
 
 	@Override
