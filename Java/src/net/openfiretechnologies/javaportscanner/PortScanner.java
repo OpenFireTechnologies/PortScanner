@@ -1,4 +1,4 @@
-package net.openfiretechnologies.javaportscanner;
+
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -10,14 +10,10 @@ import java.net.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
+import static javax.swing.JFrame.setDefaultLookAndFeelDecorated;
 
 public class PortScanner extends JFrame implements FocusListener,
 		ActionListener, Runnable {
-
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -2053356359285624030L;
 
 	Thread t = new Thread(this);
 	private JButton btnStart, btnStop, btnPause, btnResume;
@@ -27,6 +23,7 @@ public class PortScanner extends JFrame implements FocusListener,
 	InetAddress rslt = null;
 	private String IP;
 	private int strtPort, endPort;
+        private JScrollPane scroll;
 	ImageIcon icon;
 	Socket s1 = null;
 
@@ -34,7 +31,7 @@ public class PortScanner extends JFrame implements FocusListener,
 
 		icon = new ImageIcon("ofs.png");
 		setTitle("Java Port Scanner");
-		setSize(630, 600);
+		setSize(630, 550);
 		setIconImage(icon.getImage());
 		setLayout(null);
 		setResizable(false);
@@ -79,11 +76,17 @@ public class PortScanner extends JFrame implements FocusListener,
 		btnResume.setBounds(470, 120, 85, 30);
 		btnResume.addActionListener(this);
 		add(btnResume);
+                
+                	
 
 		showResult = new JTextArea();
-		showResult.setBounds(30, 200, 560, 350);
-		add(showResult);
-		setVisible(true);
+                showResult.setEditable(false);
+               		                
+                scroll=new JScrollPane(showResult);
+                scroll.setBounds(30, 200, 550, 300);
+                add(scroll);
+                
+                setVisible(true);
 
 	}
 
@@ -152,26 +155,27 @@ public class PortScanner extends JFrame implements FocusListener,
 
 	@Override
 	public void run() {
-		// Set connection timeout here in milliseconds
-		int timeout = 1000;
-		showResult.append("Results for: "
-				+ rslt.toString().replaceFirst("/", "") + "\n\n");
+                //Set connection timeout here in milliseconds
+                int timeout=1000; 
 		while (strtPort <= endPort) {
 
 			try {
-				s1 = new Socket();
-				SocketAddress sockaddr = new InetSocketAddress(rslt, strtPort);
-				s1.connect(sockaddr, timeout);
-				showResult.append("[+] OPEN : " + strtPort + "\n");
-				s1.close();
+                            s1=new Socket();
+                            SocketAddress sockaddr=new InetSocketAddress(rslt,strtPort);
+                            s1.connect(sockaddr,timeout);
+			    showResult.append("[+] OPEN : " + strtPort + "\n");
+                            showResult.setCaretPosition(showResult.getDocument().getLength());
+			    s1.close();
 			} catch (IOException ex) {
-				showResult.append("[-] CLOSED : " + strtPort + "\n");
+                            showResult.append("[-] CLOSED : " + strtPort + "\n");
+                            showResult.setCaretPosition(showResult.getDocument().getLength());
+
 			}
 
 			strtPort++;
 		}
 
-		showResult.append("\n\n[!] Scan has been Completed");
+		showResult.append("Scan has been Completed");
 	}
 
 }
