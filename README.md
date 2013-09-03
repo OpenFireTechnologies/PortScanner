@@ -11,5 +11,6 @@ PortScanner
 ##Implementations (Alphabetically)
 * Android
 * C
+* C# (CSharp)
 * Java
 * Python
