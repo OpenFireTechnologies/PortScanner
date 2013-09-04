@@ -37,7 +37,12 @@ System.out.print(  "######                          #####                       
                    "######  #    # #    #   #       #####  #      #    # # #  # # #  # #####  #    # \n"+
                    "#       #    # #####    #            # #      ###### #  # # #  # # #      #####  \n"+ 
                    "#       #    # #   #    #      #     # #    # #    # #   ## #   ## #      #   #  \n"+
-                   "#        ####  #    #   #       #####   ####  #    # #    # #    # ###### #    # \n");
+                   "#        ####  #    #   #       #####   ####  #    # #    # #    # ###### #    # \n\n");
+
+System.out.println(" {*}                       OpenFire Java Port Scanner                      {*} \n"+
+                   " {*}             Developed by:- Supratik Banerjee (drakula941)             {*} \n"+ 
+                   " {*}             Homepage:- http://www.openfire-security.net/              {*} \n"+
+                   " {*}                           Version:- 1.1                               {*} \n\n");
 }
 
 
