@@ -13,4 +13,5 @@ PortScanner
 * C
 * C# (CSharp)
 * Java
+* PHP
 * Python
