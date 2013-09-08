@@ -1,17 +1,20 @@
-
  ***************************************************************************
- * COPYING -- Describes the terms under which PortScanner is distributed.*
+ * PortScanner_WithColor is modified version of PortScanner to add         *
+ * colouring to program. License & Copyright is all same as PortScanner.   *
+ * Read below to get more details.                                         * 
+ ***************************************************************************
+ * COPYING -- Describes the terms under which PortScanner is distributed.  *
  * A copy of the GNU GPL is appended to this file.                         *
  *                                                                         *
  ***************************************************************************
- * The PortScanner is (C) 2013  Shubham Raj(openfire-security.net). This *
+ * The PortScanner is (C) 2013  Shubham Raj(openfire-security.net). This   *
  * program is free software; you may redistribute and/or modify it under   *
  * the terms of the GNU General Public License as published by the Free    *
  * Software Foundation; Version 3 ("GPL"), BUT ONLY WITH ALL OF THE        *
  * CLARIFICATIONS AND EXCEPTIONS DESCRIBED HEREIN.  This guarantees your   *
  * right to use, modify, and redistribute this software under certain      *
  * conditions. You are not allowed to sell this software at any condition. *
- * If you wish to embed its source/tech in software you sell.              *                        *
+ * If you wish to embed its source/tech in software you sell.              *
  * (contact - xceptioncode@gmail.com)                                      *
  * Note that the GPL places important restrictions on "derivative works",  *
  * yet it does not provide a detailed definition of that term.  To avoid   *
@@ -40,15 +43,13 @@
  * Source is provided to this software because we believe users have a     *
  * right to know exactly what a program is going to do before they run it. *
  *                                                                         *
- * Source code also allows you to port Nmap to new platforms, fix bugs,    *
- * and add new features.  You are highly encouraged to send your changes   *
- * to the xceptioncode@gmail.com for possible incorporation into the       *
- * main distribution.  By sending these changes to Fyodor or one of the    *
- * Insecure.Org development mailing lists, or checking them into the Nmap  *
- * source code repository, it is understood (unless you specify otherwise) *
- * that you are offering the Nmap Project (Insecure.Com LLC) the           *
- * unlimited, non-exclusive right to reuse, modify, and relicense the      *
- * code.                                                                   *
+ * Source code also allows you to port PortScanner to new platforms, fix   *
+ * bugs, and add new features.  You are highly encouraged to send your     *
+ * changes to the xceptioncode@gmail.com for possible incorporation into   *
+ * main distribution.  By sending these changes to developer it is         *
+ * understood (unless you specify otherwise) that you are offering the     *
+ * PortScanner Project (Shubham Raj) the unlimited, non-exclusive right to *
+ * reuse, modify, and relicense the code.                                  *
  *                                                                         *
  * This program is distributed in the hope that it will be useful, but     *
  * WITHOUT ANY WARRANTY; without even the implied warranty of              *
