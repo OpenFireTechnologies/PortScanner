@@ -1,4 +1,15 @@
 PortScanner
 ===============
 
-Python Implementation
+New Python Code :
+
+**
+Multi - Threaded
+Common Port Scanning
+Defined Port Scanning
+Grabbing Services From Defined Port-Services Dictionary
+Better UI
+Better Options & Listing
+
+
+Shubham Raj
