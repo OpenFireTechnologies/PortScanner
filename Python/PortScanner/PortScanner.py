@@ -91,8 +91,12 @@ def main():
         total = end-start
         count = int(len(open_ports))
         sorted_open_port_list = sorted(open_ports)
-        print "PORT \t\t STATE \t\t SERVICE\n"
-        print "-----------------------------------------\n"
+        if len(total_ports) != len(closed_ports):
+            print "Not Shwoing %d closed ports\n\n\n" % int(len(closed_ports))
+            print "PORT \t\t STATE \t\t SERVICE\n"
+            print "-----------------------------------------\n"
+        else:
+            print "\nNot Shwoing %d closed ports" % int(len(closed_ports))
         for n in sorted_open_port_list:
             if n < 1000:
                 if open_ports[n] == 'open':
@@ -104,8 +108,8 @@ def main():
                     print "%d/tcp\t open\t\t %s\n" % (n, service(n))
                 elif open_ports[n] == 'filtered':
                     print "%d/tcp\t\t filtered\t\t %s\n" % (n, service(n))
-        print "\n\nTotal no. of scanned ports : %d"  % int(len(total_ports))
-        print "Total no. of closed ports : %d" % int(len(closed_ports))
+        print "\n\nTotal no. of scanned ports: %d"  % int(len(total_ports))
+        print "Total no. of closed ports: %d" % int(len(closed_ports))
         print "\nScanning completed at %s.\nTotal time taken is %s seconds" % (readable_end, total)
     elif (common_port == True):
 
@@ -135,8 +139,12 @@ def main():
         total = end-start
         count = int(len(open_ports))
         sorted_open_port_list = sorted(open_ports)
-        print "PORT \t\t STATE \t\t SERVICE\n"
-        print "-----------------------------------------\n"
+        if len(total_ports) != len(closed_ports):
+            print "Not Shwoing %d closed ports\n\n\n" % int(len(closed_ports))
+            print "PORT \t\t STATE \t\t SERVICE\n"
+            print "-----------------------------------------\n"
+        else:
+            print "\nNot Shwoing %d closed ports" % int(len(closed_ports))
         for n in sorted_open_port_list:
             for n in sorted_open_port_list:
                 if n < 1000:
@@ -149,11 +157,11 @@ def main():
                         print "%d/tcp\t open\t\t %s\n" % (n, service(n))
                     elif open_ports[n] == 'filtered':
                         print "%d/tcp\t filtered\t\t %s\n" % (n, service(n))
-        print "\n\nTotal no. of scanned ports : %d"  % int(len(total_ports))
-        print "Total no. of closed ports : %d" % int(len(closed_ports))
+        print "\n\nTotal no. of scanned ports: %d"  % int(len(total_ports))
+        print "Total no. of closed ports: %d" % int(len(closed_ports))
         print "\nScanning completed at %s.\nTotal time taken is %s seconds" % (readable_end, total)
 
-
+# Not using getservbyport method , due to not having good port dictionary.
 def service(port):
     service_list = {1:'tcpmux', 2:'compressnet', 3:'compressnet', 4:'sfs', 5:'rje', 7:'echo', 8:'trojan - Ping Attack',
 9:'discard', 11:'systat', 13:'daytime', 15:'netstat / trojan[B2]', 17:'quotd', 18:'msp', 19:'chargen',

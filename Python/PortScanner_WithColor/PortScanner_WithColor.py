@@ -116,8 +116,8 @@ def main():
                     print "%d/tcp\t open\t\t %s\n" % (n, service(n))
                 elif open_ports[n] == 'filtered':
                     print "%d/tcp\t\t filtered\t\t %s\n" % (n, service(n))
-        print "\n\nTotal no. of scanned ports : "+ Fore.RED + Style.BRIGHT +"%d" % int(len(total_ports)) + Fore.WHITE + Style.DIM +""
-        print "Total no. of closed ports : "+ Fore.RED + Style.BRIGHT +"%d" % int(len(closed_ports)) + Fore.WHITE + Style.DIM +""
+        print "\n\nTotal no. of scanned ports: "+ Fore.RED + Style.BRIGHT +"%d" % int(len(total_ports)) + Fore.WHITE + Style.DIM +""
+        print "Total no. of closed ports: "+ Fore.RED + Style.BRIGHT +"%d" % int(len(closed_ports)) + Fore.WHITE + Style.DIM +""
         print "\nScanning completed at %s.\nTotal time taken is %s seconds" % (readable_end, total)
     elif (common_port == True):
 
@@ -147,8 +147,12 @@ def main():
         total = end-start
         count = int(len(open_ports))
         sorted_open_port_list = sorted(open_ports)
-        print "" + Fore.GREEN + Style.BRIGHT +"PORT \t\t STATE \t\t SERVICE\n"+ Fore.WHITE + Style.DIM +""
-        print "" + Fore.RED + Style.BRIGHT +"-----------------------------------------\n"+ Fore.WHITE + Style.DIM +""
+        if len(total_ports) != len(closed_ports):
+            print "" + Fore.RED + Style.BRIGHT +"Not Shwoing %d closed ports\n\n\n" % int(len(closed_ports)) + Fore.WHITE + Style.DIM +""
+            print "" + Fore.GREEN + Style.BRIGHT +"PORT \t\t STATE \t\t SERVICE\n"+ Fore.WHITE + Style.DIM +""
+            print "" + Fore.RED + Style.BRIGHT +"-----------------------------------------\n"+ Fore.WHITE + Style.DIM +""
+        else:
+            print "" + Fore.RED + Style.BRIGHT +"\nNot Shwoing %d closed ports" % int(len(closed_ports)) + Fore.WHITE + Style.DIM +""
         for n in sorted_open_port_list:
             for n in sorted_open_port_list:
                 if n < 1000:
@@ -161,8 +165,8 @@ def main():
                         print "%d/tcp\t open\t\t %s\n" % (n, service(n))
                     elif open_ports[n] == 'filtered':
                         print "%d/tcp\t filtered\t\t %s\n" % (n, service(n))
-        print "\n\nTotal no. of scanned ports : "+ Fore.RED + Style.BRIGHT +"%d" % int(len(total_ports)) + Fore.WHITE + Style.DIM +""
-        print "Total no. of closed ports : "+ Fore.RED + Style.BRIGHT +"%d" % int(len(closed_ports)) + Fore.WHITE + Style.DIM +""
+        print "\n\nTotal no. of scanned ports: "+ Fore.RED + Style.BRIGHT +"%d" % int(len(total_ports)) + Fore.WHITE + Style.DIM +""
+        print "Total no. of closed ports: "+ Fore.RED + Style.BRIGHT +"%d" % int(len(closed_ports)) + Fore.WHITE + Style.DIM +""
         print "\nScanning completed at %s.\nTotal time taken is %s seconds" % (readable_end, total)
 
 
