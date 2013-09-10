@@ -1,24 +1,20 @@
 PortScanner
 ===============
 
-Updated Python Code :
+##Updated Python Code :
 
-**
+*Multi - Threaded
 
-Multi - Threaded
+*Common Port Scanning
 
-Common Port Scanning
+*Defined Port Scanning
 
-Defined Port Scanning
+*Grabbing Services From Inbuilt Port-Services Dictionary
 
-Grabbing Services From Defined Port-Services Dictionary
+*Better UI
 
-Better UI
-
-Better Options & Listing
-
-**
-
+*Better Options & Listing
+##.
 
 
 
