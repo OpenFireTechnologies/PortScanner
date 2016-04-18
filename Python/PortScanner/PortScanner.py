@@ -314,7 +314,7 @@ def check_port(ip, port):
 
 if __name__ == '__main__':
     if sys.platform == 'linux-i386' or sys.platform == 'linux2' or sys.platform == 'darwin':
-        SysClS = 'clear'
+        SysCls = 'clear'
         os.system(SysCls)
     elif sys.platform == 'win32' or sys.platform == 'dos' or sys.platform[0:5] == 'ms-dos':
         SysCls = 'cls'
